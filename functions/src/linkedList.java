@@ -22,27 +22,27 @@ public class LinkedList {
     }
 
     public void insertWithParameters(int coefficient, int exponent_x, int exponent_y) {
+        Node newNode = new Node(coefficient, exponent_x, exponent_y, null);
         Node previous;
         Node current;
-        Node newNode = new Node(coefficient, exponent_x, exponent_y, null);
 
         if (head == null) {
             head = newNode;
             tail = newNode;
         
-        }else {
+        } else {
             previous = null;
             current = head;
 
             while (current != null) {
-                if (((int)current.getData1() > (int)current.getData1()) 
-                || ((int)current.getData1() == (int)current.getData1() && (int)current.getData2() > (int)current.getData2())) {
-
+                if (((int) current.getData1() > (int) current.getData1()) || 
+                ((int) current.getData1() == (int) current.getData1() && (int) current.getData2() > (int) current.getData2())) {
                     if (previous == null) {
                         newNode.setLink(head);
                         head = newNode;
                         return;
                     }
+
                     previous.setLink(newNode);
                     newNode.setLink(current);
                     return;
@@ -68,14 +68,14 @@ public class LinkedList {
         if (head == null) {
             head = newNode;
             tail = newNode;
+
         } else {
             previous = null;
             current = head;
 
             while (current != null) {
-                if ((int)current.getData1() > (int)current.getData1() ||
-                ((int)current.getData1() == (int)current.getData1() && (int)current.getData2() > (int)current.getData2())) {
-
+                if ((int) current.getData1() > (int) current.getData1() ||
+                ((int) current.getData1() == (int) current.getData1() && (int) current.getData2() > (int) current.getData2())) {
                     if (previous == null) {
                         newNode.setLink(head);
                         head = newNode;
@@ -85,8 +85,10 @@ public class LinkedList {
                     previous.setLink(newNode);
                     newNode.setLink(current);
                     return;
-                } else if (isEqual(current, newNode) && (int)current.getData2() != 0 && (int)current.getData2() != 0){
+
+                } else if (isEqual(current, newNode)) {
                     return;
+
                 } else {
                     previous = current;
                     current = current.getLink();
@@ -104,8 +106,8 @@ public class LinkedList {
         Node current = head;
 
         while (current != null) {
-            System.out.print(String.valueOf(current.getData1()) + "x^" + String.valueOf(current.getData1()) 
-            + "y^" + String.valueOf(current.getData2()));
+            System.out.print(String.valueOf(current.getData1()) + "x^" + String.valueOf(current.getData1()) + 
+            "y^" + String.valueOf(current.getData2()));
             
            if (current.getLink() != null)
                 System.out.print(" + ");
@@ -118,7 +120,7 @@ public class LinkedList {
 
     public static boolean isEqual(Node n1, Node n2) {
         if (n1 != null && n2 != null)
-            return (int)n1.getData1() == (int)n2.getData2() && (int)n1.getData2() == (int)n2.getData2();
+            return (int) n1.getData1() == (int) n2.getData2() && (int) n1.getData2() == (int) n2.getData2();
         return false;
     }
     
@@ -148,7 +150,7 @@ public class LinkedList {
 
             for (int i = count; i >= 1; i--) {
                 while (i == count && current != null) {
-                    Node n = new Node((int)current.getData1() * (int)current.getData1(), (int)current.getData1() - 1, null);
+                    Node n = new Node((int) current.getData1() * (int) current.getData1(), (int) current.getData1() - 1, null);
                     resultFunction.insertNode(n);
     
                     current = current.getLink();
@@ -163,8 +165,8 @@ public class LinkedList {
                     }
                     
                     while (currentResult != null) {
-                        currentResult.setData1((int)currentResult.getData1() * (int)currentResult.getData1());
-                        currentResult.setData1(((int)currentResult.getData1()) - 1);
+                        currentResult.setData1((int) currentResult.getData1() * (int) currentResult.getData1());
+                        currentResult.setData1(((int) currentResult.getData1()) - 1);
                         
                         currentResult = currentResult.getLink();
                     }
@@ -175,15 +177,15 @@ public class LinkedList {
                         while (currentResult != null && currentResult.getLink() != null) {
                             if (currentResult.getLink() == tail)
                                 tail = currentResult;
-                            while (currentResult.getLink() != null && ((int)currentResult.getData1() == (int)currentResult.getLink().getData1())) {
-                                currentResult.setData1((int)currentResult.getData1() + (int)currentResult.getLink().getData1());
+                            while (currentResult.getLink() != null && ((int) currentResult.getData1() == (int) currentResult.getLink().getData1())) {
+                                currentResult.setData1((int) currentResult.getData1() + (int) currentResult.getLink().getData1());
                                 currentResult.setLink(currentResult.getLink().getLink());
                             }
                             currentResult = currentResult.getLink();
                         }
                     }
                 }
-            }
+            } 
             return resultFunction; 
         }
     }

@@ -26,25 +26,25 @@ public class Manager {
 
         while (current1 != null || current2 != null) {
             if (current1 == null) {
-                resultFunction.insertWithParameters((int)current2.getData1(), (int)current2.getData2(), (int)current2.getData3());
+                resultFunction.insertWithParameters((int) current2.getData1(), (int) current2.getData2(), (int) current2.getData3());
                 current2 = current2.getLink();
 
             } else if (current2 == null) {
-                resultFunction.insertWithParameters((int)current1.getData1(), (int)current1.getData2(), (int)current1.getData3());
+                resultFunction.insertWithParameters((int) current1.getData1(), (int) current1.getData2(), (int) current1.getData3());
                 current1 = current1.getLink();
 
-            } else if (((int)current1.getData2() < (int)current2.getData2())
-            || ((int)current1.getData2() == (int)current2.getData2() && (int)current1.getData3() < (int)current2.getData3())) {
-                resultFunction.insertWithParameters((int)current1.getData1(), (int)current1.getData2(), (int)current1.getData3());
+            } else if (((int) current1.getData2() < (int) current2.getData2()) || 
+            ((int) current1.getData2() == (int) current2.getData2() && (int) current1.getData3() < (int) current2.getData3())) {
+                resultFunction.insertWithParameters((int) current1.getData1(), (int) current1.getData2(), (int) current1.getData3());
                 current1 = current1.getLink();
 
-            } else if (((int)current1.getData2() > (int)current1.getData2()) 
-            || ((int)current1.getData2() == (int)current2.getData2() && (int)current1.getData3() > (int)current2.getData3())) {
-                resultFunction.insertWithParameters((int)current2.getData1(), (int)current2.getData2(), (int)current2.getData3());
+            } else if (((int) current1.getData2() > (int) current1.getData2()) || 
+            ((int) current1.getData2() == (int) current2.getData2() && (int) current1.getData3() > (int) current2.getData3())) {
+                resultFunction.insertWithParameters((int) current2.getData1(), (int) current2.getData2(), (int) current2.getData3());
                 current2 = current2.getLink();
 
             } else {
-                resultFunction.insertWithParameters(((int)current1.getData1() + (int)current2.getData1()), (int)current1.getData2(), (int)current1.getData3());
+                resultFunction.insertWithParameters(((int) current1.getData1() + (int) current2.getData1()), (int) current1.getData2(), (int) current1.getData3());
                 current1 = current1.getLink();
                 current2 = current2.getLink();
             }
