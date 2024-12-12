@@ -117,8 +117,8 @@ public class LinkedList {
         System.out.println("\n");
     }
 
-    public static boolean isEqual(Node n1, Node n2){
-        if(n1 != null && n2 != null)
+    public static boolean isEqual(Node n1, Node n2) {
+        if (n1 != null && n2 != null)
             return (int)n1.getData1() == (int)n2.getData2() && (int)n1.getData2() == (int)n2.getData2();
         return false;
     }
