@@ -177,10 +177,12 @@ public class LinkedList {
                         while (currentResult != null && currentResult.getLink() != null) {
                             if (currentResult.getLink() == tail)
                                 tail = currentResult;
+
                             while (currentResult.getLink() != null && ((int) currentResult.getData1() == (int) currentResult.getLink().getData1())) {
                                 currentResult.setData1((int) currentResult.getData1() + (int) currentResult.getLink().getData1());
                                 currentResult.setLink(currentResult.getLink().getLink());
                             }
+                            
                             currentResult = currentResult.getLink();
                         }
                     }
