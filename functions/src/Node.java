@@ -1,62 +1,51 @@
-import java.util.Random;
-
 public class Node {
-    int coefficient;
-    int exponent_x;
-    int exponent_y;
+    Object data1;
+    Object data2;
+    Object data3;
     Node link;
-    Random r = new Random();
 
-    public Node() {
-        coefficient = r.nextInt(0, 6);
-        exponent_x = r.nextInt(0, 6);
-        exponent_y = r.nextInt(0, 6);
-        link = null;
-    }
-
-    public Node(int coefficient, int exponent_x, int exponent_y, Node link){
-        this.coefficient = coefficient;
-        this.exponent_x = exponent_x;
-        this.exponent_y = exponent_y;
+    public Node(Object data1, Object data2, Object data3, Node link) {
+        this.data1 = data1;
+        this.data2 = data2;
+        this.data3 = data3;
         this.link = link;
     }
 
-    public Node(int coefficient, int exponent_x, Node link){
-        this.coefficient = coefficient;
-        this.exponent_x = exponent_x;
+    public Node(Object data1, Object data2, Node link) {
+        this.data1 = data1;
+        this.data2 = data2;
         this.link = link;
     }
 
-
-    public void setCoefficient(int coefficient){
-        this.coefficient = coefficient;
+    public void setData1(Object data1) {
+        this.data1 = data1;
     }
 
-    public void setExponentX(int exponent_x){
-        this.exponent_x = exponent_x;
+    public void setExponentX(Object data2) {
+        this.data2 = data2;
     }
 
-    public void setExponentY(int exponent_y){
-        this.exponent_y = exponent_y;
+    public void setExponentY(Object data3) {
+        this.data3 = data3;
     }
 
-    public void setLink(Node n){
+    public void setLink(Node n) {
         link = n;
     }
 
-    public int getCoefficient(){
-        return coefficient;
+    public Object getData1() {
+        return data1;
     }
 
-    public int getExponentX(){
-        return exponent_x;
+    public Object getData2() {
+        return data2;
     }
 
-    public int getExponentY(){
-        return exponent_y;
+    public Object getData3() {
+        return data3;
     }
 
-    public Node getLink(){
+    public Node getLink() {
         return link;
     }
 }
