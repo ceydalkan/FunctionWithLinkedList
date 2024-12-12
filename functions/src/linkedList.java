@@ -29,9 +29,8 @@ public class LinkedList {
         if (head == null) {
             head = newNode;
             tail = newNode;
-        }
-
-        else {
+        
+        }else {
             previous = null;
             current = head;
 
